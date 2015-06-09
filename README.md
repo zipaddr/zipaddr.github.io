@@ -1,6 +1,6 @@
-# zipaddr.github.io
+# zipaddr
 
-We input an address from zip code automatically.
+We input address from zip code automatically.
 
 (1)郵便番号から住所を自動入力する操作性が世界一簡単なjavacriptツールです。
 (2)id名を合わせることで簡単な導入と操作性向上を図った強力なシステムが、無料で利用できます。
@@ -10,6 +10,7 @@ We input an address from zip code automatically.
 --☆☆ ご利用は、html内に下記の１行を追加するだけです。☆☆--
 
 <script src="http://zipaddr.com/js/zipaddr7.js" charset="UTF-8"></script> 
+
 
 [ポイント]
 ・サポート対象とするハードウエア機器は、ＰＣ及びスマートフォンです。
@@ -21,14 +22,14 @@ We input an address from zip code automatically.
 ・さらにオウンコーディングによって利用環境に合わせた色々な拡張ができます。
 ※郵便番号簿のデータソースは、「郵便事業株式会社様」のデータを利用させて頂いております。
 
-[標準サポート]
-　動作環境を判定して利用パラメータを自動設定します。対象環境は、
-　・スマートフォン
-　・jQuery Mobile
-　・EC-CUBE
-　・その他WordPress系（プラグインを利用）
-　　Welcart、contact form 7、mw wp form、Trust Form、WooCommerce、他。
-　・その他、殆んどの環境で利用できます。
+[標準サポート環境]
+動作環境を判定して利用パラメータを自動設定します。対象環境は、
+・スマートフォン
+・jQuery Mobile
+・EC-CUBE（プラグインを利用）
+・WordPress系（プラグインを利用）
+　Welcart、contact form 7、mw wp form、Trust Form、WooCommerce、他。
+・その他、殆んどの環境で利用できます。
 
 詳細なドキュメントは、http://zipaddr.com/を参照下さい。
 
