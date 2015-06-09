@@ -1,6 +1,41 @@
 # zipaddr.github.io
 
-# The input convert an address from a zip code automatically.
-# document: http://zipaddr.com/
-#
-# by pierre-soft.com
+We input an address from zip code automatically.
+
+(1)郵便番号から住所を自動入力する操作性が世界一簡単なjavacriptツールです。
+(2)id名を合わせることで簡単な導入と操作性向上を図った強力なシステムが、無料で利用できます。
+(3)当システムの設計思想は、htmlにはできる限り触らず対応するということです。
+
+
+--☆☆ ご利用は、html内に下記の１行を追加するだけです。☆☆--
+
+<script src="http://zipaddr.com/js/zipaddr7.js" charset="UTF-8"></script> 
+
+[ポイント]
+・サポート対象とするハードウエア機器は、ＰＣ及びスマートフォンです。
+・郵便番号簿の作成・保守が不要です。
+・郵番が複数の地域に対応している場合は、ガイダンス画面から選択できます。
+・郵便番号入力時の区切り '-' はあってもなくても良いです。標準は有り。
+・標準でhtml内に最大６ヶ所まで設置することができます。
+・カスタマイズは、オウンコーディング等によってid名を合わせるだけです。
+・さらにオウンコーディングによって利用環境に合わせた色々な拡張ができます。
+※郵便番号簿のデータソースは、「郵便事業株式会社様」のデータを利用させて頂いております。
+
+[標準サポート]
+　動作環境を判定して利用パラメータを自動設定します。対象環境は、
+　・スマートフォン
+　・jQuery Mobile
+　・EC-CUBE
+　・その他WordPress系（プラグインを利用）
+　　Welcart、contact form 7、mw wp form、Trust Form、WooCommerce、他。
+　・その他、殆んどの環境で利用できます。
+
+詳細なドキュメントは、http://zipaddr.com/を参照下さい。
+
+
+提供元：ピエールソフト(pierre-soft)
+〒312-0033　茨城県ひたちなか市市毛815-5
+　代表： 照沼 辰郎（てるぬま たつろう）
+　TEL ： 029-274-1629
+　FAX ： 029-274-1629
+　ホーム： http://pierre-soft.com/
