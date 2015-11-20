@@ -16,4 +16,4 @@ function zipaddr_ownb(){
   D.pm[5]={"zip":k5+"33]","zip1":"", "pref":k5+"25]","city":"", "addr":k5+"26]", "focus":k5+"27]"};//shop
 }
 function AjaxZip3(){}
-AjaxZip3.zip2addr=function(z, d1,s,c,d2,a){Zip.ajax(z);};
+AjaxZip3.zip2addr=function(z, d1,s,c,d2,a){Zip.aa(z);};
