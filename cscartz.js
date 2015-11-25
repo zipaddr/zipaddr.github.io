@@ -9,7 +9,6 @@ function zipaddr_ownb(){
   var k3= "company_data[";
   var k4= "supplier_data[";
   var k5= "update[";
-//var k6= "field__default_";
   ZP.pm[1]={"zip":k1+zp,   "zip1":"", "pref":k1+st,   "city":"", "addr":k1+ci,    "focus":k1+ad   };//¿‹æ
   ZP.pm[2]={"zip":k2+zp,   "zip1":"", "pref":k2+st,   "city":"", "addr":k2+ci,    "focus":k2+ad   };//”z‘—æ
   ZP.pm[3]={"zip":k3+zp,   "zip1":"", "pref":k3+st,   "city":"", "addr":k3+ci,    "focus":k3+ad   };
