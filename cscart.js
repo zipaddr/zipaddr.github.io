@@ -18,6 +18,8 @@ function zipaddr_ownb(){
   D.pm[4]={"zip":k4+zp,   "zip1":"", "pref":k4+st,   "city":"", "addr":k4+ci,    "focus":k4+ad   };
   D.pm[5]={"zip":k5+"33]","zip1":"", "pref":k51+"25","city":"", "addr":k5+"26]", "focus":k5+"27]"};//ƒVƒ‡‰^
   D.pm[6]={"zip":k5+"18]","zip1":"", "pref":k61+"21","city":"", "addr":k5+"19]", "focus":k5+"17]"};//‘S”Ê
+//Šg’£•û–@iid–¼‚ğw’è‚µ‚Ä‰º‚³‚¢j
+//D.pm[7]={"zip":"§","zip1":"‰º4Œ…","pref":"“s“¹•{Œ§","city":"s‹æ’¬‘º", "addr":"ZŠ", "focus":"focus"};
 }
 function AjaxZip3(){}
 AjaxZip3.zip2addr=function(z, d1,s,c,d2,a){Zip.aa(z);};
