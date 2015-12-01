@@ -22,6 +22,7 @@ function zipaddr_ownb(){
   D.pm[7]={"zip":"zip2","zip1":"zip21","pref":"pref2","city":"city2","addr":"addr2","focus":""};
   D.pm[8]={"zip":"zip3","zip1":"zip31","pref":"pref3","city":"city3","addr":"addr3","focus":""};
 //D.pm[9]={"zip":"〒",  "zip1":"下4桁","pref":"都道府県","city":"市区町村", "addr":"住所", "focus":"focus"};
+  D.sysid= "cscart";
 }
 function AjaxZip3(){}
 AjaxZip3.zip2addr=function(z, d1,s,c,d2,a){Zip.aa(z);};
