@@ -1,4 +1,4 @@
-function zipaddr_ownb(){var ver="1.1";
+function zipaddr_ownb(){var ver="1.2";
   var zp= "zip01";
   var z2= "zip02";
   var st= "pref";
@@ -17,7 +17,9 @@ function zipaddr_ownb(){var ver="1.1";
   D.pm[6]={"zip":"zip3","zip1":"zip31","pref":"pref3","city":"city3","addr":"addr3","focus":"addr3"};
 //D.pm[7]={"zip":"〒",  "zip1":"下4桁","pref":"都道府県","city":"市区町村", "addr":"住所","focus":"focus"};
 
-  D.top=  21;            // 位置
+  D.sfon="16";      // sPhone
+  D.shig="1.5";
+  D.top=  21;       // 位置
   D.sl=  "都道府県を選択";
   D.zipmax= D.pm.length;
   D.eccube="1";
