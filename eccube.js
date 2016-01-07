@@ -26,4 +26,4 @@ function zipaddr_ownb(){var ver="1.3";
   D.sysid= "eccube";
   if( typeof zipaddr_ownb_continue==="function" ) zipaddr_ownb_continue(); // 追加owncode
 }
-//変更する場合は、自サイトにzipaddr_ownb_continueを設置して下さい。
+//拡張する場合は、自サイトにzipaddr_ownb_continueを設置して下さい。
