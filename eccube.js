@@ -1,4 +1,4 @@
-function zipaddr_ownb(){var ver="1.4";
+function zipaddr_ownb(){var ver="1.5";
   var zp= "zip01";
   var z2= "zip02";
   var st= "pref";
@@ -24,6 +24,7 @@ function zipaddr_ownb(){var ver="1.4";
   D.zipmax= D.pm.length;
   D.eccube="1";
   D.sysid= "eccube";
+  D.holder="住所自動入力";
   if( typeof zipaddr_ownb_continue==="function" ) zipaddr_ownb_continue(); // 追加owncode
 }
 //拡張する場合は、自サイトにzipaddr_ownb_continueを設置して下さい。
