@@ -1,0 +1,255 @@
+@charset "utf-8";
+body {
+	background-color:#ffffff;
+	margin-top: 2px;
+	color:#333333;
+	font-size:13px;
+	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+	line-height:130%;
+}
+h1 {
+	font-size: 140%;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding: 8px;
+    border-top: 3px solid #3333FF;
+    border-left: 8px solid #3333FF;
+    border-bottom: 3px solid #3333FF;
+	background:#F0FFFF;
+	text-align: left;
+}
+h2 {
+	font-size: 120%;
+    margin-left: 0px;
+    padding: 4px;
+    margin-top: 2em;
+    border-top: 2px solid #3333FF;
+    border-left: 8px solid #3333FF;
+    border-bottom: 2px solid #3333FF;
+	background:#F0FFFF;
+}
+h3 {
+	font-size: 120%;
+	margin-left: 15px;
+    margin-top: 1em;
+}
+pre {
+    margin-left: 50px;
+    padding: 8px 8px 8px 20px;
+    border-color: #999999;
+    background-color: #EEEEEE;
+    color: #222222;
+}
+p {
+	margin-left: 1.5em;
+	margin-right: 1em;
+}
+/*
+a {
+	color:#1E69EB;
+	text-decoration:none;
+}
+a:hover {
+	color:#ff6600;
+	text-decoration:underline;
+}
+*/
+.head a {
+	color:#1E69EB;
+	text-decoration:none;
+}
+.head a:hover {
+	color:#ff6600;
+	text-decoration:underline;
+}
+table {
+	border-collapse:collapse;
+	border-spacing: 0;
+}
+th,td {
+	border-bottom:1px solid #8f8f8f;
+	border-right: 1px solid #8f8f8f;
+}
+input,textarea,select {       /* フォームの設定 */
+	margin:3px 0;
+}
+input:focus,textarea:focus,select:focus {
+	background: #FFFFCC;
+}
+
+
+.title {
+	text-decoration: underline
+}
+table.tb01 {
+	width: 500px;
+	text-align: center;
+	margin:0 auto;
+	border-top: 1px solid #8f8f8f;
+	border-left:1px solid #8f8f8f;
+}
+table.tb02 {
+	width: 700px;
+	text-align: center;
+	margin:0 auto;
+	border-top: 1px solid #8f8f8f;
+	border-left:1px solid #8f8f8f;
+}
+.tbl_01 {
+	width:145px;
+	background:#F0FFFF;
+	padding: 5px 2px;
+	text-align: left;
+}
+.tbl_02 {
+	width:230px;
+	background:#F0FFFF;
+	padding: 5px 2px;
+	text-align: left;
+}
+.tbr_01 {
+	padding: 3px 0 3px 5px;
+	text-align: left;
+}
+html:not([lang*=""]) table.tb01 {  /* Firefox用ハック */
+	border-collapse: separate;
+}
+html:not([lang*=""]) table.tb02 {  /* Firefox用ハック */
+	border-collapse: separate;
+}
+div.linet {
+	font-size: 130%;
+	width: 500px;
+	margin:0 auto;
+	padding: 5px 2px;
+	text-align: center;
+	text-decoration: underline;
+}
+div.line {
+	width: 500px;
+	margin:0 auto;
+	padding: 5px 2px;
+	text-align:left;
+}
+.company {
+	font-size: 10px;
+	text-align: right;
+	margin-right: 1em;
+}
+.pagetop {
+	font-size: 11px;
+	text-align: right;
+	margin-right: 1em;
+}
+.pagetop a {
+	color:#1E69EB;
+	text-decoration:none;
+}
+.pagetop a:hover {
+	color:#ff6600;
+	text-decoration:underline;
+}
+.caution {
+	color: darkorange;
+	font-size: 110%;
+}
+.ul {
+	border-bottom: solid 1px darkorange;
+}
+#pref {
+	margin-left: 5px;
+}
+.form_btn {
+	line-height:100%;
+	margin:0 auto;
+}
+.hissu, .red, .errmsg {
+	color:red;
+}
+.center {
+	text-align:center;
+	margin:0 auto;
+}
+.left {
+	text-align:left;
+}
+.right {
+	text-align:right;
+}
+.clear {
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+}
+#cautt {
+	width: 800px;
+	border: 3px solid darkorange;
+	margin:0 auto;
+}
+#cauts {
+	font-size: 18px;
+	line-height: 120%;
+}
+
+
+.form_txt-normal {
+	width: 300px;             /* 300px */
+	margin-left: 5px;
+	padding-left: 2px;
+	border: 1px solid #3F3F3F;
+	background:#f7f7f7;
+}
+.form_txt-middle {
+	width: 250px;             /* 250px */
+	margin-left: 5px;
+	padding-left: 2px;
+	border: 1px solid #3F3F3F;
+	background:#f7f7f7;
+}
+.form_txt-knormal {
+	width: 200px;             /* 200px */
+	margin-left: 5px;
+	padding-left: 2px;
+	border: 1px solid #3F3F3F;
+	background:#f7f7f7;
+}
+.form_txt-name {
+	width: 150px;             /* 150px */
+	margin-left: 5px;
+	padding-left: 2px;
+	border: 1px solid #3F3F3F;
+	background:#f7f7f7;
+}
+.form_txt-short {
+	width: 100px;             /* 100px */
+	margin-left: 5px;
+	padding-left: 2px;
+	border: 1px solid #3F3F3F;
+	background:#f7f7f7;
+}
+.form_txt-number {
+	width: 60px;              /* 60px */
+	margin-left: 5px;
+	padding-left: 2px;
+	border: 1px solid #3F3F3F;
+	background:#f7f7f7;
+}
+.form_txt-mini {
+	width: 50px;              /* 50px */
+	margin-left: 5px;
+	padding-left: 2px;
+	border: 1px solid #3F3F3F;
+	background:#f7f7f7;
+	ime-mode: disabled;
+}
+.form_txtarea {
+	margin-left: 5px;
+	padding-left: 2px;
+	border: 1px solid #3F3F3F;
+	background:#f7f7f7;
+}
+#workarea {position:absolute; background-color:#009999;}
+#workarea a {color:#FFFFCC; text-decoration:none;}
+.subm_off .subm_on {
+	display: none;
+}
