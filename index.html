@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>ZipAddr</title>
+<link rel="stylesheet" href="https://zipaddr.com/css/style.css" />
+<script src="https://zipaddr.github.io/zipaddrx.js" charset="UTF-8"></script>
+<script src="https://zipaddr.github.io/zipaddrrc.js" charset="UTF-8"></script>
+<script type="text/javascript">
+function rtrv_submit(){                           // 分解開始の入口点
+	var zipc= document.getElementById("zipc").value;
+	var keys= document.getElementById("address").value;
+	if( keys!="" ) zipaddrr(zipc,keys,"3a7aCGY4QWxu","callback"); // "TgeWyKPsM3RT"は契約コード
+}
+function callback(da){                            // 分解結果の処理
+	aCa(elid);
+	document.getElementById("zip6").value=  da.zip;
+	document.getElementById("pref6").value= da.pref;
+	document.getElementById("city6").value= da.city;
+	document.getElementById("area6").value= da.area;
+	document.getElementById("addr6").value= da.addr;
+}
+</script>
+</head>
+<body>
+<div id="top"></div>
+<br />
+
+
+<h1>（１）郵便番号から住所を自動入力するZipAddr群です。</h1>
+<p>
+■特徴<br />
+&nbsp;（１）簡単（htmlに1行追加）に導入ができ、しかも常に最新の郵便番号簿で利用できます。<br />
+&nbsp;（２）郵便番号が複数の地域に対応しているものでも、ガイダンス画面選択方式によって正しく操作できます。<br />
+&nbsp;（３）検索スピードが高速です。<br />
+&nbsp;（４）郵便番号3桁-4桁や入力完了後のフォーカス(カーソル)が自動で移動します。<br />
+&nbsp;（５）沢山の利用環境バリエーション、拡張ができます。<br />
+　　※複数対応は1,548ヶ所、全体では1%もの複数地域対応データが存在します。<br />
+
+<br />
+<br />
+■御社ではどの住所自動入力を選択しますか？<br />
+&nbsp;（ｗ）Wordpressで利用の場合は、‥‥<a href="http://zipaddr2.com/wordpress/" target="_blank">プラグイン`zipaddr-jp`</a>へ<br />
+&nbsp;（ｅ）EC-CUBEで利用の場合は、‥‥‥<a href="https://zipaddr.com/eccube/plugin.html" target="_blank">プラグイン`Zipaddr`</a>へ<br />
+&nbsp;（ｊ）jqueryで利用の場合は、‥‥‥<a href="demoj/" target="_blank">モジュール`jzipaddr3.js`</a>を使ったデモへ<br />
+<br />
+&nbsp;（３）御社サイト内で利用の場合は、‥‥‥<a href="http://zipaddr3.com/" target="_blank">http://zipaddr3.com/（有償版）</a>へ<br />
+&nbsp;（２）お客様に納品するサイトの場合は、‥‥<a href="http://zipaddr2.com/" target="_blank">http://zipaddr2.com/（有償版）</a>へ<br />
+&nbsp;（１）安全性、スピードを重視する場合は、‥‥<a href="https://zipaddr.com/" target="_blank">https://zipaddr.com/（無料版）</a>へ<br />
+※全てのシステムが、郵便番号の<span class="caution">複数地域対応</span>をサポートしています。<br />
+
+
+
+
+
+<br />
+<br />
+<h1>（２）郵便番号から住所を自動入力するデモです。</h1>
+<br />
+<form name="form1" id="form1" action="index.html" method="post">
+<div class="errmsg"></div>
+<div class="linet"><u>　住所の自動入力（zipaddrx.js）　</u></div>
+<br />
+<table class="tb01">
+<tr><td class="tbl_01">郵便番号<span class="hissu">[必須]</span></td>
+	<td class="tbr_01"><input type="text" name="zip" id="zip" class="form_txt-short" placeholder="例：101-0021" value="" />&nbsp;【住所を自動入力】</td>
+</tr>
+
+<tr><td class="tbl_01">都道府県<span class="hissu">[必須]</span></td>
+	<td class="tbr_01"><select name="pref" id="pref" size="1">
+<option value="">---選択</option>
+<option value="1">北海道</option>
+<option value="2">青森県</option>
+<option value="3">岩手県</option>
+<option value="4">宮城県</option>
+<option value="5">秋田県</option>
+<option value="6">山形県</option>
+<option value="7">福島県</option>
+<option value="8">茨城県</option>
+<option value="9">栃木県</option>
+<option value="10">群馬県</option>
+<option value="11">埼玉県</option>
+<option value="12">千葉県</option>
+<option value="13">東京都</option>
+<option value="14">神奈川県</option>
+<option value="15">新潟県</option>
+<option value="16">富山県</option>
+<option value="17">石川県</option>
+<option value="18">福井県</option>
+<option value="19">山梨県</option>
+<option value="20">長野県</option>
+<option value="21">岐阜県</option>
+<option value="22">静岡県</option>
+<option value="23">愛知県</option>
+<option value="24">三重県</option>
+<option value="25">滋賀県</option>
+<option value="26">京都府</option>
+<option value="27">大阪府</option>
+<option value="28">兵庫県</option>
+<option value="29">奈良県</option>
+<option value="30">和歌山県</option>
+<option value="31">鳥取県</option>
+<option value="32">島根県</option>
+<option value="33">岡山県</option>
+<option value="34">広島県</option>
+<option value="35">山口県</option>
+<option value="36">徳島県</option>
+<option value="37">香川県</option>
+<option value="38">愛媛県</option>
+<option value="39">高知県</option>
+<option value="40">福岡県</option>
+<option value="41">佐賀県</option>
+<option value="42">長崎県</option>
+<option value="43">熊本県</option>
+<option value="44">大分県</option>
+<option value="45">宮崎県</option>
+<option value="46">鹿児島県</option>
+<option value="47">沖縄県</option>
+<option value="99">海外</option>
+</select>
+</td>
+</tr>
+
+<tr><td class="tbl_01">市区町村<span class="hissu">[必須]</span></td>
+	<td class="tbr_01"><input type="text" name="city" id="city" class="form_txt-short" placeholder="例：千代田区" value="" /></td>
+</tr>
+
+<tr><td class="tbl_01">地域<span class="hissu">[必須]</span></td>
+	<td class="tbr_01"><input type="text" name="area" id="area" class="form_txt-short" placeholder="例：外神田" value="" /></td>
+</tr>
+
+<tr><td class="tbl_01">番地以降<span class="hissu">[必須]</span></td>
+	<td class="tbr_01"><input type="text" name="addr" id="addr" class="form_txt-short" placeholder="例：１ー１" value="" /></td>
+</tr>
+
+</table>
+</form>
+</p>
+<p class="pagetop"><a href="#top">▲ページの先頭へ</a></p>
+
+
+
+
+
+<br />
+<br />
+<h1>（３）住所データを都道府県～番地以降に分解するデモです。</h1>
+<form name="form2" id="form2" action="#" method="post">
+<p>
+※住所を入力して「分解する」をクリックして下さい。<br />
+〒<input type="text" name="zipc" id="zipc" class="form_txt-short" placeholder="例：101-0021" value="" /><br />
+<input type="text" name="address" id="address" class="form_txt-normal" value="東京都千代田区外神田１ー１" />
+<input type="button" value="分解する" onclick="rtrv_submit();"><br />
+</p>
+<br />
+
+<div class="linet"><u>　住所を分解するデモ（zipaddrrc.js）　</u></div>
+<br />
+<table class="tb01">
+<tr><td class="tbl_01">郵便番号</td>
+	<td class="tbr_01"><input type="text" name="zip6" id="zip6" class="form_txt-short" placeholder="例：101-0021" value="" /></td>
+</tr>
+
+<tr><td class="tbl_01">都道府県</td>
+	<td class="tbr_01"><input type="text" name="pref6" id="pref6" class="form_txt-short" placeholder="例：東京都" value="" /></td>
+</tr>
+
+<tr><td class="tbl_01">市区町村</td>
+	<td class="tbr_01"><input type="text" name="city6" id="city6" class="form_txt-short" placeholder="例：千代田区" value="" /></td>
+</tr>
+
+<tr><td class="tbl_01">地域</td>
+	<td class="tbr_01"><input type="text" name="area6" id="area6" class="form_txt-short" placeholder="例：外神田" value="" /></td>
+</tr>
+
+<tr><td class="tbl_01">番地以降</td>
+	<td class="tbr_01"><input type="text" name="addr6" id="addr6" class="form_txt-short" placeholder="例：１ー１" value="" /></td>
+</tr>
+</table>
+</form>
+<p class="pagetop"><a href="#top">▲ページの先頭へ</a></p>
+
+
+
+
+
+<br />
+<br />
+<h1>（４）システムのご提供元</h1>
+<p>
+【 ピエールソフト 】<br />
+〒312-0033　茨城県ひたちなか市市毛815-5<br />
+　　代表： 照沼 辰郎（てるぬま たつろう）<br />
+　　TEL ： 029-274-1629<br />
+　　FAX ： 029-274-1629<br />
+　　ホーム： <a href="http://pierre-soft.com/" target="_blank">http://pierre-soft.com/</a><br />
+</p>
+
+<br />
+<br />
+<br />
+
+
+</body>
+</html>
