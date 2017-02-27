@@ -1,6 +1,6 @@
 function Bnk(){
 /*
- *	■金融機関（銀行コード等）情報の自動入力( bankauto.js Ver2.7 )
+ *	■金融機関（銀行コード等）情報の自動入力( bankauto2.js Ver2.7 )
  *
  *	The use is free of charge. / ご利用は無料です。
  *	@demo    http://bank-auto.com/
@@ -49,6 +49,7 @@ this.xb="";         // code
 this.xn="";         // name
 this.xi="";         // number
 this.xp="";         // sequence
+this.xk="";
 this.bc="";         // 銀行コード
 this.apad="";       // module追加
 this.xlisten= "";   // 1:ｷIE,2:IE
