@@ -1,8 +1,8 @@
 function zipaddr_ownb(){
-  var ver="1.3";
+  var ver="1.4";
 //標準のお問い合わせ
-  D.pm[1]={"zip":"data[MailMessage][zip]", "zip1":"data[MailMessage][zip1]", "pref":"data[MailMessage][address_1]", "city":"", "area":"", "addr":"data[MailMessage][address_2]", "focus":"data[MailMessage][address_2]"};
-  D.pm[2]={"zip":"zip2","zip1":"zip21","pref":"pref2","city":"city2","area":"area2","addr":"addr2","focus":"addr2"};
+  D.pm[1]={"zip":"MailMessageZip", "zip1":"MailMessageZip1", "pref":"MailMessageAddress1", "city":"", "area":"", "addr":"MailMessageAddress2", "focus":"MailMessageAddress2"};
+  D.pm[2]={"zip":"MessageZip", "zip1":"MessageZip1", "pref":"MessageAddress1", "city":"", "area":"", "addr":"MessageAddress2", "focus":"MessageAddress2"};
   D.pm[3]={"zip":"zip3","zip1":"zip31","pref":"pref3","city":"city3","area":"area3","addr":"addr3","focus":"addr3"};
   D.pm[4]={"zip":"zip4","zip1":"zip41","pref":"pref4","city":"city4","area":"area4","addr":"addr4","focus":"addr4"};
   D.pm[5]={"zip":"zip5","zip1":"zip51","pref":"pref5","city":"city5","area":"area5","addr":"addr5","focus":"addr5"};
