@@ -1,5 +1,5 @@
 function zipaddr_ownb(){
-  var ver="1.1";
+  var ver="1.2";
 //標準のお問い合わせ
   D.pm[1]={"zip":"field_zip", "zip1":"field_zip1", "pref":"field_pref", "city":"field_city", "area":"field_area", "addr":"field_addr", "focus":"field_addr"};
   D.pm[2]={"zip":"field_zip2","zip1":"field_zip21","pref":"field_pref2","city":"field_city2","area":"field_area2","addr":"field_addr2","focus":"field_addr2"};
@@ -9,7 +9,6 @@ function zipaddr_ownb(){
   D.pm[6]={"zip":"zip6","zip1":"zip61","pref":"pref6","city":"city6","area":"area6","addr":"addr6","focus":"addr6"};
 //D.pm[7]={"zip":"〒",  "zip1":"下4桁","pref":"都道府県","city":"市区町村","area":"地区","addr":"番地","focus":"focus"};
 
-  D.basercms= "1";
   D.zipmax= D.pm.length;
   D.sl= "都道府県";
   D.holder="住所自動入力";
