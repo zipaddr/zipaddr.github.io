@@ -1,4 +1,5 @@
-function zipaddr_ownb(){var ver="4.0";
+function zipaddr_ownb(){
+  var ver="4.0";
   var zp= "_postal_code";     //郵便番号
 //var z2= "_zip02";
   var st= "_address_pref";    //都道府県
@@ -25,7 +26,7 @@ function zipaddr_ownb(){var ver="4.0";
   D.pm[7]={"zip":k7+zp, "zip1":"", "pref":k7+st, "city":"", "area":k7+ad, "addr":k7+fc, "focus":k7+fc};
   D.pm[8]={"zip":k8+zp, "zip1":"", "pref":k8+st, "city":"", "area":k8+ad, "addr":k8+fc, "focus":k8+fc};
   D.pm[9]={"zip":k9+zp, "zip1":"", "pref":k9+st, "city":"", "area":k9+ad, "addr":k9+fc, "focus":k9+fc};
- D.pm[10]={"zip":k+"5", "zip1":"", "pref":k+"6", "city":"", "area":k+"7", "addr":k+"8", "focus":k+"8"};
+//D.pm[10]={"zip":k+"5","zip1":"", "pref":k+"6", "city":"", "area":k+"7", "addr":k+"8", "focus":k+"8"};
   D.top=  21;            // 位置
   D.sl=  "都道府県を選択";
   D.zipmax= D.pm.length;
