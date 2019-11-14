@@ -1,0 +1,15 @@
+#autoin_def {
+    color:#ffffff;
+    font-size:24px;
+    font-weight:bold; 
+    background-color: #009999;
+    padding:4px 5px;
+    padding= "5px 8px"; 
+    border-color: #009999;
+    border-radius: 8px;
+    white-space: nowrap;
+    margin-left:5px;
+    margin-right:5px;
+    vertical-align: middle;
+    line-height:30px;
+}
