@@ -1,11 +1,12 @@
-function zipaddr_ownpm(){     //WP-Members—p
-  const ver="1.0";
+function zipaddr_ownpm(){     //WP-Membersç”¨
+  const ver="1.1";
   const bbb= "billing_";
   const zzc= bbb+ "postcode";
   const zpf= bbb+ "state";
   const zci= bbb+ "city";
   const zad= bbb+ "address_1";
-  ZP.pm[1]= {"zip":zzc,  "zip1":"","pref":zpf,    "city":zci,   "area":"","addr":zad,    "focus":""}; // €–ÚidƒZƒbƒg
-  ZP.pm[2]= {"zip":"zip","zip1":"","pref":"state","city":"city","area":"","addr":"addr1","focus":""};
-  ZP.zipmax= ZP.pm.length;
+  pm= new Array();
+  pm[1]= {"zip":zzc,  "zip1":"","pref":zpf,    "city":zci,   "area":"","addr":zad,    "focus":""}; // é …ç›®idã‚»ãƒƒãƒˆ
+  pm[2]= {"zip":"zip","zip1":"","pref":"state","city":"city","area":"","addr":"addr1","focus":""};
+  return pm;
 }
