@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //WPForms用
-	const ver="1.1";
+	const ver="1.2";
 	let lab= new Array();
 	lab[0]= "郵便番号";
 	lab[1]= "都道府県";
@@ -12,7 +12,7 @@ function zipaddr_ownpm(){     //WPForms用
 	ans[3]= "";
 	const elm= document.getElementsByTagName("label");
 	for( let ii=0;ii<elm.length;ii++ ){
-		const idx= elm[ii].for;
+		const idx= elm[ii].htmlFor;
 		let dat= elm[ii].innerHTML; // <label...>都道府県  </label>
 		for( let jj=0;jj<lab.length;jj++ ){
 			if( dat.indexOf(lab[jj]) ){  //都道府県含まれる？
