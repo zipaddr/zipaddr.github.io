@@ -1,10 +1,11 @@
 function zipaddr_ownpm(){     //WPForms用
-	const ver="1.3";
+	const ver="1.4";
 	let lab= new Array();
 	lab[0]= "郵便番号";
 	lab[1]= "都道府県";
 	lab[2]= "市区町村";
 	lab[3]= "住所";
+	lab[4]= "区市町村";
 	let ans= new Array();
 	ans[0]= "";
 	ans[1]= "";
@@ -18,7 +19,8 @@ function zipaddr_ownpm(){     //WPForms用
 			const ptrn= new RegExp( lab[jj], 'g' );
 			matchArr= dat.match(ptrn);
 			if( Array.isArray(matchArr) ){  //都道府県含まれる？
-				ans[jj]= idx;
+				if( jj==4 ) ans[2]= idx;
+				else       ans[jj]= idx;
 				jj= 9999;
 		}	}
 	}
