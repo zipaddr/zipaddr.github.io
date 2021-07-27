@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //WooCommerce用
-	const ver="1.0";
+	const ver="1.1";
 	let lab= new Array();
 	lab[0]= "billing_";
 	lab[1]= "shipping_";
@@ -24,7 +24,7 @@ function zipaddr_ownpm(){     //WooCommerce用
 	}	}
 //Set
 	pm= new Array();
-	pm[1]= {"zip":ans[0], "zip1":"", "pref":ans[1], "city":ans[2], "area":"", "addr":ans[3], "focus":""};
-	pm[2]= {"zip":ans[6], "zip1":"", "pref":ans[7], "city":ans[8], "area":"", "addr":ans[9], "focus":""};
+	pm[1]= {"zip":ans[0], "zip1":"", "pref":ans[1], "city":ans[2], "area":"", "addr":"", "focus":ans[3]};
+	pm[2]= {"zip":ans[6], "zip1":"", "pref":ans[7], "city":ans[8], "area":"", "addr":"", "focus":ans[9]};
 	return pm;
 }
