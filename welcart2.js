@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //Welcart用
-	const ver="1.4";
+	const ver="1.5";
 	const zip=   "zipcode";
 	const prf=   "pref";
 	const addr1= "address1";
@@ -9,7 +9,7 @@ function zipaddr_ownpm(){     //Welcart用
 	pref[1]=             prf;
 	pref[2]= "member_"+  prf;
 	pref[3]= "customer_"+prf;
-	pref[4]= "delivery_"+pref;
+	pref[4]= "delivery_"+prf;
 //Set
 	if( typeof ZP.tel != "undefined" ) {ZP.tel[1]="tel";   ZP.tel[2]="tel";}
 	if( typeof ZP.sei != "undefined" ) {ZP.sei[1]="name1"; ZP.sei[2]="name1";}
@@ -28,9 +28,9 @@ function zipaddr_ownpm(){     //Welcart用
   if( document.getElementById(pref[3]) ){
 	pm[1]= {"zip":zip, "zip1":"", "pref":pref[3], "city":"", "area":addr1, "addr":addr2, "focus":addr2};
   }
-  else{
+  else
+  if( document.getElementById(pref[4]) ){
 	pm[1]= {"zip":zip, "zip1":"", "pref":pref[4], "city":"", "area":addr1, "addr":addr2, "focus":addr2};
-	if( typeof ZP.dyna!="undefined") ZP.dyna="1";
   }
 	return pm;
 }
