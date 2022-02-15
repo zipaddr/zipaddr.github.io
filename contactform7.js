@@ -1,20 +1,22 @@
 function zipaddr_ownpm(){     //contactform7
-	const ver= "1.8";
-	let pm= new Array();      //default
+	const ver= "1.10";
 	const zip=  "zip";        // id="zip" - id="zip1"
 	const pref= "pref";       // id="pref"
 	const city= "city";       // id="city"
 	const area= "area";       // id="area"
 	const addr= "addr";       // id="addr"
-	let dcnt= 0;
-	if( document.getElementById(zip)  ) dcnt++;
-	if( document.getElementById(pref) ) dcnt++;
-	if( document.getElementById(city) ) dcnt++;
-	if( document.getElementById(area) ) dcnt++;
-	if( document.getElementById(addr) ) dcnt++;
-	if( dcnt >= 2 ) return pm;// 従来通り
+	zipaddr_ownpm_namec("zip1","zip1");
+//name="zip"のみは id="zip" を付加する（優先処理）
+	let pm= new Array();      //default
+let dcnt= 0;
+	dcnt+= zipaddr_ownpm_count(zip);
+	dcnt+= zipaddr_ownpm_count(pref);
+	dcnt+= zipaddr_ownpm_count(city);
+	dcnt+= zipaddr_ownpm_count(area);
+	dcnt+= zipaddr_ownpm_count(addr);
+	if( dcnt >= 2 ) return pm; // 従来と同じ動きへ
 //
-//                            // 未設定の場合、自動設定を試みます。
+//未設定の場合、自動設定を試みます。（xxx-xxxxは除外する）
 	let szip=  zipaddr_ownpm_ctrl("郵便番号");
 	let spref= zipaddr_ownpm_ctrl("都道府県");
 	let scity= zipaddr_ownpm_ctrl("市区町村");
@@ -23,7 +25,7 @@ function zipaddr_ownpm(){     //contactform7
 	if( szip =="" ) szip=  zipaddr_ownpm_ctrl("〒");
 	if( scity=="" ) scity= zipaddr_ownpm_ctrl("市町村");
 	if( saddr=="" ) saddr= zipaddr_ownpm_ctrl("番地");
-	if( scity == saddr ) scity="";
+	if( scity == sarea || scity == saddr ) scity="";
 	if( sarea == saddr ) sarea="";
 //
 	const xzip=  zipaddr_ownpm_namec(szip,  zip );
@@ -50,12 +52,18 @@ function zipaddr_ownpm_look(tag,ptrn){
 	for( let ii=0;ii<elm.length;ii++ ){
 		const dat= elm[ii].innerHTML;             // <p..>郵便番号  </p>
 		if( dat.match(ptrn) ){
-			const msg= dat.match(/name="(.*)"/i); // <input type="text" name="zip"..
-			if( msg!==false ){
+			let msg= dat.match(/name="(.*)"/i);   // <input type="text" name="zip"..
+			if( msg!=null && msg!==false ){
 				const da= msg[0].split('"');      // name="zip"..
 				ans= da[1];                       // zip
 	}	}	}
 	return ans;
+}
+function zipaddr_ownpm_count(zip){
+	if( document.getElementById(zip) ) return 1;
+	else
+	if( zipaddr_ownpm_namec(zip,zip)!="" ) return 1;
+	else return 0;
 }
 function zipaddr_ownpm_namec(nam,xid){
 	let ans="";
