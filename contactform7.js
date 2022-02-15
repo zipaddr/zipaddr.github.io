@@ -1,11 +1,11 @@
 function zipaddr_ownpm(){     //contactform7
-	const ver= "1.11";
-	const zip=  "zip";        // id="zip" - id="zip1"
-	const pref= "pref";       // id="pref"
-	const city= "city";       // id="city"
-	const area= "area";       // id="area"
-	const addr= "addr";       // id="addr"
-	zipaddr_ownpm_namec("zip1","zip1");
+	const ver= "1.12";         let xzip1= "zip1";
+	const zip=  "zip";   // id="zip" - id="zip1"
+	const pref= "pref";  // id="pref"
+	const city= "city";  // id="city"
+	const area= "area";  // id="area"
+	const addr= "addr";  // id="addr"
+	if( !document.getElementById(xzip1) ) xzip1= zipaddr_ownpm_namec(xzip1,xzip1);
 //name="zip"のみは id="zip" を付加する（優先処理）
 	let pm= new Array();      //default
 let dcnt= 0;
@@ -34,7 +34,7 @@ let dcnt= 0;
 	const xarea= zipaddr_ownpm_namec(sarea, area);
 	const xaddr= zipaddr_ownpm_namec(saddr, addr);
 //Set
-	pm[1]= {"zip":xzip, "zip1":"", "pref":xpref, "city":xcity, "area":xarea, "addr":xaddr, "focus":""};
+	pm[1]= {"zip":xzip, "zip1":xzip1, "pref":xpref, "city":xcity, "area":xarea, "addr":xaddr, "focus":""};
 	return pm;
 }
 function zipaddr_ownpm_ctrl(uban){
@@ -46,8 +46,7 @@ function zipaddr_ownpm_ctrl(uban){
 	if( ans=="" ) ans= zipaddr_ownpm_look("dl",   ptrn);
 	return ans;
 }
-function zipaddr_ownpm_look(tag,ptrn){
-	let ans="";
+function zipaddr_ownpm_look(tag,ptrn){ let ans="";
 	const elm= document.getElementsByTagName(tag);//label
 	for( let ii=0;ii<elm.length;ii++ ){
 		const dat= elm[ii].innerHTML;             // <p..>郵便番号  </p>
@@ -65,8 +64,7 @@ function zipaddr_ownpm_count(zip){
 	if( zipaddr_ownpm_namec(zip,zip)!="" ) return 1;
 	else return 0;
 }
-function zipaddr_ownpm_namec(nam,xid){
-	let ans="";
+function zipaddr_ownpm_namec(nam,xid){ let ans="";
 	if( nam != "" ){
 		const elm= document.getElementsByName(nam);
 		if( elm.length==1 ){
