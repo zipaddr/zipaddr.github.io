@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //contactform7
-	const ver= "1.10";
+	const ver= "1.11";
 	const zip=  "zip";        // id="zip" - id="zip1"
 	const pref= "pref";       // id="pref"
 	const city= "city";       // id="city"
@@ -14,7 +14,7 @@ let dcnt= 0;
 	dcnt+= zipaddr_ownpm_count(city);
 	dcnt+= zipaddr_ownpm_count(area);
 	dcnt+= zipaddr_ownpm_count(addr);
-	if( dcnt >= 2 ) return pm; // 従来と同じ動きへ
+	if( dcnt >= 2 ) return pm; // 従来と同じ動き（互換性維持）
 //
 //未設定の場合、自動設定を試みます。（xxx-xxxxは除外する）
 	let szip=  zipaddr_ownpm_ctrl("郵便番号");
