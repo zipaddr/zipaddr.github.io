@@ -1,10 +1,11 @@
 function zipaddr_ownpm(){     //contactform7
-	const ver= "1.12";         let xzip1= "zip1";
+	const ver= "1.13";
 	const zip=  "zip";   // id="zip" - id="zip1"
 	const pref= "pref";  // id="pref"
 	const city= "city";  // id="city"
 	const area= "area";  // id="area"
 	const addr= "addr";  // id="addr"
+	let xzip1= "zip1";
 	if( !document.getElementById(xzip1) ) xzip1= zipaddr_ownpm_namec(xzip1,xzip1);
 //name="zip"のみは id="zip" を付加する（優先処理）
 	let pm= new Array();      //default
@@ -20,11 +21,11 @@ let dcnt= 0;
 	let szip=  zipaddr_ownpm_ctrl("郵便番号");
 	let spref= zipaddr_ownpm_ctrl("都道府県");
 	let scity= zipaddr_ownpm_ctrl("市区町村");
-	let sarea= zipaddr_ownpm_ctrl("地域");
-	let saddr= zipaddr_ownpm_ctrl("住所");
+	let sarea= zipaddr_ownpm_ctrl("町域");
+	let saddr= zipaddr_ownpm_ctrl("番地");
 	if( szip =="" ) szip=  zipaddr_ownpm_ctrl("〒");
 	if( scity=="" ) scity= zipaddr_ownpm_ctrl("市町村");
-	if( saddr=="" ) saddr= zipaddr_ownpm_ctrl("番地");
+	if( sarea=="" ) sarea= zipaddr_ownpm_ctrl("地域");
 	if( scity == sarea || scity == saddr ) scity="";
 	if( sarea == saddr ) sarea="";
 //
@@ -43,10 +44,10 @@ function zipaddr_ownpm_ctrl(uban){
 	              ans= zipaddr_ownpm_look("label",ptrn);
 	if( ans=="" ) ans= zipaddr_ownpm_look("p",    ptrn);
 	if( ans=="" ) ans= zipaddr_ownpm_look("tr",   ptrn);
-	if( ans=="" ) ans= zipaddr_ownpm_look("dl",   ptrn);
 	return ans;
 }
-function zipaddr_ownpm_look(tag,ptrn){ let ans="";
+function zipaddr_ownpm_look(tag,ptrn){
+	let ans="";
 	const elm= document.getElementsByTagName(tag);//label
 	for( let ii=0;ii<elm.length;ii++ ){
 		const dat= elm[ii].innerHTML;             // <p..>郵便番号  </p>
@@ -64,7 +65,8 @@ function zipaddr_ownpm_count(zip){
 	if( zipaddr_ownpm_namec(zip,zip)!="" ) return 1;
 	else return 0;
 }
-function zipaddr_ownpm_namec(nam,xid){ let ans="";
+function zipaddr_ownpm_namec(nam,xid){
+	let ans="";
 	if( nam != "" ){
 		const elm= document.getElementsByName(nam);
 		if( elm.length==1 ){
