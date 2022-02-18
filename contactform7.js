@@ -28,6 +28,7 @@ let dcnt= 0;
 	if( szip =="" ) szip=  zipaddr_ownpm_ctrl("〒");
 	if( scity=="" ) scity= zipaddr_ownpm_ctrl("市町村");
 	if( sarea=="" ) sarea= zipaddr_ownpm_ctrl("地域");
+	if( saddr=="" ) saddr= zipaddr_ownpm_ctrl("以降の住所");
 	if( scity == sarea || scity == saddr ) scity="";
 	if( sarea == saddr ) sarea="";
 //
@@ -42,8 +43,7 @@ let dcnt= 0;
 }
 function zipaddr_ownpm_ctrl(uban){  let ans="";
 	const ptrn= new RegExp(uban);                 //郵便番号
-	              ans= zipaddr_ownpm_look("label",ptrn);
-	if( ans=="" ) ans= zipaddr_ownpm_look("p",    ptrn);
+	              ans= zipaddr_ownpm_look("p",    ptrn);
 	if( ans=="" ) ans= zipaddr_ownpm_look("tr",   ptrn);
 	return ans;
 }
