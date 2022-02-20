@@ -46,6 +46,7 @@ function zipaddr_ownpm_ctrl(uban){  let ans="";
 	const ptrn= new RegExp(uban);                 //郵便番号
 	              ans= zipaddr_ownpm_look("p",    ptrn);
 	if( ans=="" ) ans= zipaddr_ownpm_look("tr",   ptrn);
+	if( ans=="" ) ans= zipaddr_ownpm_look("label",ptrn);
 	return ans;
 }
 function zipaddr_ownpm_look(tag,ptrn){  let ans="";
