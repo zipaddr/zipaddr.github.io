@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //contactform7
-	const ver= "1.14";
+	const ver= "1.15";
 	const zip=  "zip";   // id="zip" - id="zip1"
 	const pref= "pref";  // id="pref"
 	const city= "city";  // id="city"
@@ -29,6 +29,7 @@ let dcnt= 0;
 	if( scity=="" ) scity= zipaddr_ownpm_ctrl("市町村");
 	if( sarea=="" ) sarea= zipaddr_ownpm_ctrl("地域");
 	if( saddr=="" ) saddr= zipaddr_ownpm_ctrl("以降の住所");
+	if( saddr=="" ) saddr= zipaddr_ownpm_ctrl("ご住所");
 	if( scity == sarea || scity == saddr ) scity="";
 	if( sarea == saddr ) sarea="";
 //
