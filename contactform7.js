@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //contactform7
-	const ver= "1.15";
+	const ver= "1.16";
 	const zip=  "zip";   // id="zip" - id="zip1"
 	const pref= "pref";  // id="pref"
 	const city= "city";  // id="city"
@@ -9,10 +9,9 @@ function zipaddr_ownpm(){     //contactform7
 	let xfocus="focus";
 	if( !document.getElementById(xzip1) ) xzip1= zipaddr_ownpm_namec(xzip1,xzip1);
 	if( !document.getElementById(xfocus)) xfocus=zipaddr_ownpm_namec(xfocus,xfocus);
-//name="zip"のみは id="zip" を付加する（優先処理）
 	let pm= new Array();      //default
 let dcnt= 0;
-	dcnt+= zipaddr_ownpm_count(zip);
+	dcnt+= zipaddr_ownpm_count(zip);    //name="zip"のみは id="zip" を付加する（優先処理）
 	dcnt+= zipaddr_ownpm_count(pref);
 	dcnt+= zipaddr_ownpm_count(city);
 	dcnt+= zipaddr_ownpm_count(area);
@@ -33,12 +32,11 @@ let dcnt= 0;
 	if( scity == sarea || scity == saddr ) scity="";
 	if( sarea == saddr ) sarea="";
 //
-	const xzip=  zipaddr_ownpm_namec(szip,  zip );
-	const xpref= zipaddr_ownpm_namec(spref, pref);
-	const xcity= zipaddr_ownpm_namec(scity, city);
-	const xarea= zipaddr_ownpm_namec(sarea, area);
-	const xaddr= zipaddr_ownpm_namec(saddr, addr);
-//Set
+	const xzip=  zipaddr_ownpm_namec(szip, zip );
+	const xpref= zipaddr_ownpm_namec(spref,pref);
+	const xcity= zipaddr_ownpm_namec(scity,city);
+	const xarea= zipaddr_ownpm_namec(sarea,area);
+	const xaddr= zipaddr_ownpm_namec(saddr,addr); //Set
 	pm[1]= {"zip":xzip, "zip1":xzip1, "pref":xpref, "city":xcity, "area":xarea, "addr":xaddr, "focus":xfocus};
 	return pm;
 }
