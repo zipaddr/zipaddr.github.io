@@ -5,10 +5,10 @@ function zipaddr_ownpm(){     //contactform7
 	const city= "city";  // id="city"
 	const area= "area";  // id="area"
 	const addr= "addr";  // id="addr"
-	let xzip1= "zip1";
-	let xfocus="focus";
-	if( !document.getElementById(xzip1) ) xzip1= zipaddr_ownpm_namec(xzip1,xzip1);
-	if( !document.getElementById(xfocus)) xfocus=zipaddr_ownpm_namec(xfocus,xfocus);
+	let xz1= "zip1";
+	let xfs= "focus";
+	if( !document.getElementById(xz1) ) xz1= zipaddr_ownpm_namec(xz1,xz1);
+	if( !document.getElementById(xfs) ) xfs= zipaddr_ownpm_namec(xfs,xfs);
 	let pm= new Array();      //default
 let dcnt= 0;
 	dcnt+= zipaddr_ownpm_count(zip);    //name="zip"のみは id="zip" を付加する（優先処理）
@@ -16,7 +16,7 @@ let dcnt= 0;
 	dcnt+= zipaddr_ownpm_count(city);
 	dcnt+= zipaddr_ownpm_count(area);
 	dcnt+= zipaddr_ownpm_count(addr);
-	if( dcnt >= 2 ) return pm; // 従来と同じ動き（互換性維持）
+	if( dcnt >= 2 ) return pm; // 従来と同じ動き（互換性優先）
 //
 //未設定の場合、自動設定を試みます。（xxx-xxxxは除外する）
 	let szip=  zipaddr_ownpm_ctrl("郵便番号");
@@ -32,12 +32,12 @@ let dcnt= 0;
 	if( scity == sarea || scity == saddr ) scity="";
 	if( sarea == saddr ) sarea="";
 //
-	const xzip=  zipaddr_ownpm_namec(szip, zip );
-	const xpref= zipaddr_ownpm_namec(spref,pref);
-	const xcity= zipaddr_ownpm_namec(scity,city);
-	const xarea= zipaddr_ownpm_namec(sarea,area);
-	const xaddr= zipaddr_ownpm_namec(saddr,addr); //Set
-	pm[1]= {"zip":xzip, "zip1":xzip1, "pref":xpref, "city":xcity, "area":xarea, "addr":xaddr, "focus":xfocus};
+	const xzp= zipaddr_ownpm_namec(szip, zip );
+	const xpf= zipaddr_ownpm_namec(spref,pref);
+	const xcy= zipaddr_ownpm_namec(scity,city);
+	const xar= zipaddr_ownpm_namec(sarea,area);
+	const xad= zipaddr_ownpm_namec(saddr,addr); //Set
+	pm[1]= {"zip":xzp, "zip1":xz1, "pref":xpf, "city":xcy, "area":xar, "addr":xad, "focus":xfs};
 	return pm;
 }
 function zipaddr_ownpm_ctrl(uban){  let ans="";
@@ -60,10 +60,9 @@ function zipaddr_ownpm_look(tag,ptrn){  let ans="";
 	return ans;
 }
 function zipaddr_ownpm_count(zip){
-	if( document.getElementById(zip) ) return 1;
-	else
-	if( zipaddr_ownpm_namec(zip,zip)!="" ) return 1;
-	else return 0;
+	 if( document.getElementById(zip) )     return 1;
+else if( zipaddr_ownpm_namec(zip,zip)!="" ) return 1;
+else return 0;
 }
 function zipaddr_ownpm_namec(nam,xid){  let ans="";
 	if( nam != "" ){
