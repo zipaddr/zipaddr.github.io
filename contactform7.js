@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //contactform7
-	const ver= "1.16";
+	const ver= "1.17";
 	const zip=  "zip";   // id="zip" - id="zip1"
 	const pref= "pref";  // id="pref"
 	const city= "city";  // id="city"
@@ -52,10 +52,11 @@ function zipaddr_ownpm_look(tag,ptrn){  let ans="";
 	for( let ii=0;ii<elm.length;ii++ ){
 		const dat= elm[ii].innerHTML;             // <p..>郵便番号  </p>
 		if( dat.match(ptrn) ){
-			let msg= dat.match(/name="(.*)"/i);   // <input type="text" name="zip"..
+			let msg= dat.match(/ name="(.*)"/i);  // <input type="text" name="zip"..
 			if( msg!=null && msg!==false ){
 				const da= msg[0].split('"');      // name="zip"..
 				ans= da[1];                       // zip
+				break;
 	}	}	}
 	return ans;
 }
