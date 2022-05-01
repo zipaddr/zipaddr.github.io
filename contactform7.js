@@ -1,23 +1,25 @@
 function zipaddr_ownpm(){     //contactform7
-	const ver= "1.17";
-	const zip=  "zip";   // id="zip" - id="zip1"
-	const pref= "pref";  // id="pref"
-	const city= "city";  // id="city"
-	const area= "area";  // id="area"
-	const addr= "addr";  // id="addr"
-	let xz1= "zip1";
+	const ver= "1.18";
+const idc0= "zip,zip2,zip3,zip4,zip5,zip6"      .split(',');
+const idc1= "zip1,zip21,zip31,zip41,zip51,zip61".split(',');
+const idc2= "pref,pref2,pref3,pref4,pref5,pref6".split(',');
+const idc3= "city,city2,city3,city4,city5,city6".split(',');
+const idc4= "area,area2,area3,area4,area5,area6".split(',');
+const idc5= "addr,addr2,addr3,addr4,addr5,addr6".split(',');
+const idt= idc0.concat(idc1,idc2,idc3,idc4,idc5);
+	const zip= idc0[0];       // id="zip" - id="zip1"
+	const pref=idc2[0];       // id="pref"
+	const city=idc3[0];       // id="city"
+	const area=idc4[0];       // id="area"
+	const addr=idc5[0];       // id="addr"
+	let xz1=   idc1[0];       // id="zip1"
 	let xfs= "focus";
 	if( !document.getElementById(xz1) ) xz1= zipaddr_ownpm_namec(xz1,xz1);
 	if( !document.getElementById(xfs) ) xfs= zipaddr_ownpm_namec(xfs,xfs);
-	let pm= new Array();      //default
-let dcnt= 0;
-	dcnt+= zipaddr_ownpm_count(zip);    //name="zip"のみは id="zip" を付加する（優先処理）
-	dcnt+= zipaddr_ownpm_count(pref);
-	dcnt+= zipaddr_ownpm_count(city);
-	dcnt+= zipaddr_ownpm_count(area);
-	dcnt+= zipaddr_ownpm_count(addr);
-	if( dcnt >= 2 ) return pm; // 従来と同じ動き（互換性優先）
-//
+	let pm= new Array();      // default
+	let dcnt= 0;              // name="zip"のみは id="zip" を付加する（優先処理）
+	for( let ii=0;ii<idt.length;ii++ ) {dcnt+= zipaddr_ownpm_count(idt[ii]);}
+	if( dcnt >= 2 ) return pm;// 従来と同じ動き（互換性優先）
 //未設定の場合、自動設定を試みます。（xxx-xxxxは除外する）
 	let szip=  zipaddr_ownpm_ctrl("郵便番号");
 	let spref= zipaddr_ownpm_ctrl("都道府県");
