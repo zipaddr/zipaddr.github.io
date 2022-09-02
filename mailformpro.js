@@ -1,11 +1,9 @@
 function zipaddr_ownpm(){     //mailformpro用
-	const ver="1.4";
+	const ver="1.5";
 	const uban= "郵便番号";
 	let ans= new Array();
 //
-	let dat= zipaddr_ownpm_search(uban);          // 都道府県,市区町村,住所
-	let da= dat.split(",");
-	if( da.length != 3 ) return ans;
+	let da= zipaddr_ownpm_search(uban);           // 都道府県,市区町村,住所
 	if( da[0]==da[1] ) da[0]="";
 	if( da[1]==da[2] ) da[1]="";
 	ans[0]= zipaddr_ownpm_namec(uban, "zip");
@@ -18,9 +16,29 @@ function zipaddr_ownpm(){     //mailformpro用
 	return pm;
 }
 function zipaddr_ownpm_search(nam){
-	let ans= "";
-	const elm= document.getElementsByName(nam);
-	if( elm.length==1 ) ans= elm[0].getAttribute("data-address");
+	let ans= new Array();
+	ans[0]= ans[1]= ans[2]= "";
+	const elm= document.getElementsByName(nam);   // 郵便番号
+	if( elm.length==1 ){
+		if( elm[0].hasAttribute("data-address") ){
+			let dat= elm[0].getAttribute("data-address"); //data-address="都道府県,市区町村,市区町村"
+			ans= dat.split(",");
+			if( ans.length != 3 ) ans= new Array();
+		}
+		else{
+			const obj= document.getElementsByTagName("input");
+			for( let ii=0;ii<obj.length;ii++ ){
+				let dats= obj[ii].getAttribute("onclick"); //onclick="mfpc('mailform','郵便番号','住所(必須)');"
+				if( dats != null && dats.substr(0,5)=="mfpc(" ){
+					let dat= dats.slice(0,-2);    // );をカット
+					let da= dat.split(",");
+					if( da.length==3 ){
+						ans[0]= ans[1]= ans[2]= da[2].replace(/'/g,"");
+						dats= dats.replace("mfpc(","zipaddr_mfpc(");
+						obj[ii].setAttribute("onclick",dats);
+						break;
+		}	}	}	}
+	}
 	return ans;
 }
 function zipaddr_ownpm_namec(nam,xid){
@@ -32,4 +50,7 @@ function zipaddr_ownpm_namec(nam,xid){
 			ans= elm[0].id;
 	}	}
 	return ans;
+}
+function zipaddr_mfpc(mf,zip,addr){
+//	alert(mf+":"+zip+":"+addr);
 }
