@@ -1,10 +1,14 @@
 function zipaddr_ownpm(){     //Ninja Forms用
-	const ver="1.1";
+	const ver="1.2";
 	let ans= new Array();
 	ans[0]= "zip";
 	ans[1]= zipaddr_ownpm_tag("label","都道府県");
 	ans[2]= "city";
 	ans[3]= "address";
+	ans[6]= "zip2";
+	ans[7]= zipaddr_ownpm_tag("label","都道府県2");
+	ans[8]= "city2";
+	ans[9]= "address2";
 	for( let ii=0;ii<ans.length;ii++ ){
 		const elm= document.getElementsByName(ans[ii]);
 		if( elm.length==1 ) ans[ii]=elm[0].id;    // 差し替え
@@ -18,7 +22,8 @@ function zipaddr_ownpm(){     //Ninja Forms用
 		if( ZP.simei[1]=="" ) ZP.simei[1]= zipaddr_ownpm_tag("label","氏名");
 	}
 	pm= new Array();
-	pm[1]= {"zip":ans[0], "zip1":"", "pref":ans[1], "city":ans[2], "area":"", "addr":ans[3], "focus":""};
+pm[1]= {"zip":ans[0], "zip1":"", "pref":ans[1], "city":ans[2], "area":"", "addr":ans[3], "focus":ans[3]};
+pm[2]= {"zip":ans[6], "zip1":"", "pref":ans[7], "city":ans[8], "area":"", "addr":ans[9], "focus":ans[9]};
 	return pm;
 }
 function zipaddr_ownpm_tag(tag,names){
