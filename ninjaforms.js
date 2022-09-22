@@ -1,12 +1,12 @@
 function zipaddr_ownpm(){     //Ninja Forms用
-	const ver="1.3";
+	const ver="1.4";
 	let ans= new Array();
 	ans[0]= "zip";
-	ans[1]= zipaddr_ownpm_tag("label","都道府県");
+	ans[1]= zipaddr_ownpm_tag("label","^都道府県");
 	ans[2]= "city";
 	ans[3]= "address";
 	ans[6]= "zip2";
-	ans[7]= zipaddr_ownpm_tag("label","[都道府県]");
+	ans[7]= zipaddr_ownpm_tag("label","^\\[都道府県\\]");
 	ans[8]= "city2";
 	ans[9]= "address2";
 	for( let ii=0;ii<ans.length;ii++ ){
