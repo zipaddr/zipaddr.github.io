@@ -1,12 +1,12 @@
 function zipaddr_ownpm(){     //Ninja Forms用
-	const ver="1.4";
+	const ver="1.5";
 	let ans= new Array();
 	ans[0]= "zip";
-	ans[1]= zipaddr_ownpm_tag("label","^都道府県");
+	ans[1]= zipaddr_ownpm_tag("label","都道府県");
 	ans[2]= "city";
 	ans[3]= "address";
 	ans[6]= "zip2";
-	ans[7]= zipaddr_ownpm_tag("label","^\\[都道府県\\]");
+	ans[7]= zipaddr_ownpm_tag("label","都道府県2");
 	ans[8]= "city2";
 	ans[9]= "address2";
 	for( let ii=0;ii<ans.length;ii++ ){
@@ -28,15 +28,22 @@ pm[2]= {"zip":ans[6], "zip1":"", "pref":ans[7], "city":ans[8], "area":"", "addr"
 }
 function zipaddr_ownpm_tag(tag,names){
 	let ans="";
-	const ptrn= new RegExp(names);
+	const pref= "都道府県";
+	const namel= pref.length;
 	const elm= document.getElementsByTagName(tag);
 	for( let ii=0;ii<elm.length;ii++ ){
 		let dat= elm[ii].innerHTML;               // <label...>都道府県  </label>
 		dat= dat.replace(/　/g,'');
 		dat= dat.replace(/ /g, '');
-		if( dat.match(ptrn) ){                    //都道府県/
-			ans= elm[ii].id.replace('label-',''); // nf-label-field-xx
-			break;
+		if( dat.length < namel ){;}
+		else
+		if( dat.substr(0,namel) != pref ){;}      // 都道府県
+		else
+		if( dat == names ) {ans= elm[ii].id.replace('label-',''); break;} // nf-label-field-xx
+		else{
+			let ddd= dat.substr(namel,1);         // 都道府県n
+			ddd= ("2" <= ddd && ddd <= "5") ?  pref+ddd : pref;
+			if( ddd == names ) {ans= elm[ii].id.replace('label-',''); break;}
 	}	}
 	return ans;
 }
