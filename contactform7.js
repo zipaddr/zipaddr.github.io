@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //contactform7
-	const ver= "1.18";
+	const ver= "1.19";
 const idc0= "zip,zip2,zip3,zip4,zip5,zip6"      .split(',');
 const idc1= "zip1,zip21,zip31,zip41,zip51,zip61".split(',');
 const idc2= "pref,pref2,pref3,pref4,pref5,pref6".split(',');
@@ -68,6 +68,8 @@ else if( zipaddr_ownpm_namec(zip,zip)!="" ) return 1;
 else return 0;
 }
 function zipaddr_ownpm_namec(nam,xid){  let ans="";
+	if( document.getElementById(xid) ) ans=xid;
+	else
 	if( nam != "" ){
 		const elm= document.getElementsByName(nam);
 		if( elm.length==1 ){
