@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //Forminator用
-	const ver="1.3";
+	const ver="1.4";
 let cnt= 0;
 let ans= new Array();
 let prm= new Array();
@@ -16,6 +16,7 @@ let prm= new Array();
 			if( res != "" ) {ans[ii]=res; jj=999; cnt++;}
 		}
 	}
+	if( ans[2] == ans[3] ) ans[2]="";
 	pm= new Array();
 if( ans[0]!="" && cnt >= 2 ){
 	pm[1]={"zip":ans[0],"zip1":"","pref":ans[1],"city":ans[2],"area":ans[3],"addr":ans[4],"focus":ans[4]};
