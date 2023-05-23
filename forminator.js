@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //Forminator用
-	const ver="1.2";
+	const ver="1.3";
 let cnt= 0;
 let ans= new Array();
 let prm= new Array();
@@ -29,6 +29,7 @@ function zipaddr_ownpm_tag(names){
 		let parm= elm[ii].innerHTML; //<label for="forminator-field-text-_1234567"..>郵便番号</label>
 		if( parm.includes(names) ){  //郵便番号？
 			ans= elm[ii].getAttribute('for');
+			ans= ans.replace("-label", "");
 			break;
 		}
 	}
