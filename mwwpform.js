@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //MWWPForm
-	const ver= "1.19";
+	const ver= "1.20";
 const idc0= "zip,zip2,zip3,zip4,zip5,zip6"      .split(',');
 const idc1= "zip1,zip21,zip31,zip41,zip51,zip61".split(',');
 const idc2= "pref,pref2,pref3,pref4,pref5,pref6".split(',');
@@ -50,6 +50,10 @@ function zipaddr_ownpm_ctrl(uban){  let ans="";
 	              ans= zipaddr_ownpm_look("p",    ptrn);
 	if( ans=="" ) ans= zipaddr_ownpm_look("tr",   ptrn);
 	if( ans=="" ) ans= zipaddr_ownpm_look("label",ptrn);
+	if( ans=="" ){
+		const elm= document.getElementsByName(uban);
+		if( elm.length==1 ) ans= uban;
+	}
 	return ans;
 }
 function zipaddr_ownpm_look(tag,ptrn){  let ans="";
