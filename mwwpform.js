@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //MWWPForm
-	const ver= "1.19";
+	const ver= "1.20";
 const idc0= "zip,zip2,zip3,zip4,zip5,zip6"      .split(',');
 const idc1= "zip1,zip21,zip31,zip41,zip51,zip61".split(',');
 const idc2= "pref,pref2,pref3,pref4,pref5,pref6".split(',');
@@ -38,10 +38,9 @@ const idt= idc0.concat(idc1,idc2,idc3,idc4,idc5);
 	const xpf= zipaddr_ownpm_namec(spref,pref);
 	const xcy= zipaddr_ownpm_namec(scity,city);
 	const xar= zipaddr_ownpm_namec(sarea,area);
-	const xad= zipaddr_ownpm_namec(saddr,addr); //Set
-	const xp=  zipaddr_ownpm_namec("郵便番号[data][0]", zip );
-	const x1=  zipaddr_ownpm_namec("郵便番号[data][1]","zip1");
-	if( xp != "" && x1 != "" ) {xzp=xp; xz1=x1;}
+	const xad= zipaddr_ownpm_namec(saddr,addr);   //Set
+	const xp=  zipaddr_ownpm_uban().split(',');   // 特別仕様
+	if( xp[0] != "" && xp[1] != "" ) {xzp=xp[0]; xz1=xp[1];}
 	pm[1]= {"zip":xzp, "zip1":xz1, "pref":xpf, "city":xcy, "area":xar, "addr":xad, "focus":xfs};
 	return pm;
 }
@@ -50,6 +49,10 @@ function zipaddr_ownpm_ctrl(uban){  let ans="";
 	              ans= zipaddr_ownpm_look("p",    ptrn);
 	if( ans=="" ) ans= zipaddr_ownpm_look("tr",   ptrn);
 	if( ans=="" ) ans= zipaddr_ownpm_look("label",ptrn);
+	if( ans=="" ){
+		const elm= document.getElementsByName(uban);
+		if( elm.length==1 ) ans= uban;
+	}
 	return ans;
 }
 function zipaddr_ownpm_look(tag,ptrn){  let ans="";
@@ -64,6 +67,17 @@ function zipaddr_ownpm_look(tag,ptrn){  let ans="";
 				break;
 	}	}	}
 	return ans;
+}
+function zipaddr_ownpm_uban(){
+	const uban= "郵便番号,zip".split(',');
+	let xp= "";
+	let x1= "";
+	for( let ii=0;ii<uban.length;ii++ ){
+		xp= zipaddr_ownpm_namec(uban[ii]+"[data][0]","zip");
+		x1= zipaddr_ownpm_namec(uban[ii]+"[data][1]","zip1");
+		if( xp != "" && x1 != "" ) break;
+	}
+	return xp +","+ x1;
 }
 function zipaddr_ownpm_count(zip){
 	 if( document.getElementById(zip) )     return 1;
