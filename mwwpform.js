@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //MWWPForm
-	const ver= "1.20";
+	const ver= "1.21";
 const idc0= "zip,zip2,zip3,zip4,zip5,zip6"      .split(',');
 const idc1= "zip1,zip21,zip31,zip41,zip51,zip61".split(',');
 const idc2= "pref,pref2,pref3,pref4,pref5,pref6".split(',');
@@ -34,13 +34,18 @@ const idt= idc0.concat(idc1,idc2,idc3,idc4,idc5);
 	if( scity == sarea || scity == saddr ) scity="";
 	if( sarea == saddr ) sarea="";
 //
-	let   xzp= zipaddr_ownpm_namec(szip, zip );
-	const xpf= zipaddr_ownpm_namec(spref,pref);
-	const xcy= zipaddr_ownpm_namec(scity,city);
-	const xar= zipaddr_ownpm_namec(sarea,area);
-	const xad= zipaddr_ownpm_namec(saddr,addr);   //Set
+	let xzp= zipaddr_ownpm_namec(szip, zip );
+	let xpf= zipaddr_ownpm_namec(spref,pref);
+	let xcy= zipaddr_ownpm_namec(scity,city);
+	let xar= zipaddr_ownpm_namec(sarea,area);
+	let xad= zipaddr_ownpm_namec(saddr,addr);     //Set
 	const xp=  zipaddr_ownpm_uban().split(',');   // 特別仕様
 	if( xp[0] != "" && xp[1] != "" ) {xzp=xp[0]; xz1=xp[1];}
+if( xpf=="" ) xpf= zipaddr_ownpm_namec(pref,pref);
+if( xcy=="" ) xcy= zipaddr_ownpm_namec(city,city);
+if( xar=="" ) xar= zipaddr_ownpm_namec(area,area);
+if( xad=="" ) xad= zipaddr_ownpm_namec(addr,addr);
+if( xad=="" ) xad= zipaddr_ownpm_namec("address",addr);
 	pm[1]= {"zip":xzp, "zip1":xz1, "pref":xpf, "city":xcy, "area":xar, "addr":xad, "focus":xfs};
 	return pm;
 }
