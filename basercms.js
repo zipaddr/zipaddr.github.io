@@ -1,5 +1,5 @@
 function zipaddr_ownb(){     //basercms用
-  var ver="1.7";
+  var ver="1.8";
 	let ans= new Array();
 	ans[0]= zipaddr_ownpm_name("zip");
 	ans[1]= zipaddr_ownpm_name("address_1");
@@ -25,7 +25,8 @@ function zipaddr_ownpm_name(nam){
 	if( nam != "" ){
 		const elm= document.getElementsByName(nam);
 		if( elm.length==1 ){
-			if( elm[0].id!="" ) ans= elm[0].id;
+			if( elm[0].id=="" ) elm[0].id=nam;
+			ans= elm[0].id;
 	}	}
 	return ans;
 }
