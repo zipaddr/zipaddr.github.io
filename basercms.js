@@ -1,5 +1,6 @@
 function zipaddr_ownb(){     //basercms用
   var ver="1.7";
+	let ans= new Array();
 	ans[0]= zipaddr_ownpm_name("zip");
 	ans[1]= zipaddr_ownpm_name("address_1");
 	ans[2]= zipaddr_ownpm_name("address_2");
