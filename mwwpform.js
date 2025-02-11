@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //MWWPForm
-	const ver= "1.21";
+	const ver= "1.22";
 const idc0= "zip,zip2,zip3,zip4,zip5,zip6"      .split(',');
 const idc1= "zip1,zip21,zip31,zip41,zip51,zip61".split(',');
 const idc2= "pref,pref2,pref3,pref4,pref5,pref6".split(',');
@@ -74,7 +74,7 @@ function zipaddr_ownpm_look(tag,ptrn){  let ans="";
 	return ans;
 }
 function zipaddr_ownpm_uban(){
-	const uban= "郵便番号,zip".split(',');
+	const uban= "郵便番号,zip,postcode".split(',');
 	let xp= "";
 	let x1= "";
 	for( let ii=0;ii<uban.length;ii++ ){
