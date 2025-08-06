@@ -1,5 +1,5 @@
 function zipaddr_ownpm(){     //WPForms用
-	const ver="1.5";
+	const ver="1.6";
 	let ans= new Array();
 	ans[0]= zipaddr_ownpm_tag("label","郵便番号");
 	ans[1]= zipaddr_ownpm_tag("label","都道府県");
@@ -15,7 +15,7 @@ function zipaddr_ownpm(){     //WPForms用
 }
 function zipaddr_ownpm_tag(tag,names){
 	let ans="";
-	const ptrn= new RegExp(names);
+	const ptrn= new RegExp("^"+names);
 	const elm= document.getElementsByTagName(tag);
 	for( let ii=0;ii<elm.length;ii++ ){
 		let dat= elm[ii].innerHTML;               // <label...>都道府県  </label>
