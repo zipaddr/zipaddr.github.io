@@ -1,9 +1,9 @@
-function zipaddr_ownpm(){     //Welcart用
-	const ver="1.6";
-	const zip=   "zipcode";
+function zipaddr_ownpm(){     //Welcart(usces)用
+	const ver="1.7";
+	const zip=   "[zipcode]";
 	const prf=   "pref";
-	const addr1= "address1";
-	const addr2= "address2";
+	const addr1= "[address1]";
+	const addr2= "[address2]";
 //
 	let pref= new Array();
 	pref[1]=             prf;
@@ -15,20 +15,23 @@ function zipaddr_ownpm(){     //Welcart用
 	if( typeof ZP.sei != "undefined" ) {ZP.sei[1]="name1"; ZP.sei[2]="name1";}
 	if( typeof ZP.mei != "undefined" ) {ZP.mei[1]="name2"; ZP.mei[2]="name2";}
 	pm= new Array();
-  if( document.getElementById(pref[1]) ){
-	pm[1]= {"zip":zip, "zip1":"", "pref":pref[1], "city":"", "area":addr1, "addr":addr2, "focus":addr2};
+	let zp;
+	let a1;
+	let a2;
+//	pm[1]= {"zip":"zip_code", "zip1":"", "pref":"", "city":"", "area":addr1, "addr":addr2, "focus":addr2};
+  if( document.getElementById(pref[3]) ){         // customer
+	const pr= pref[3].split("_");
+	zp= Bas.nd(pr[0]+zip);
+	a1= Bas.nd(pr[0]+addr1);
+	a2= Bas.nd(pr[0]+addr2);
+	pm[1]= {"zip":zp, "zip1":"", "pref":pref[3], "city":"", "area":a1, "addr":a2, "focus":a2};
   }
-  else
-  if( document.getElementById(pref[2]) ){
-	pm[1]= {"zip":zip, "zip1":"", "pref":pref[2], "city":"", "area":addr1, "addr":addr2, "focus":addr2};
-  }
-  else
-  if( document.getElementById(pref[3]) ){
-	pm[1]= {"zip":zip, "zip1":"", "pref":pref[3], "city":"", "area":addr1, "addr":addr2, "focus":addr2};
-  }
-  else
   if( document.getElementById(pref[4]) ){
-	pm[1]= {"zip":zip, "zip1":"", "pref":pref[4], "city":"", "area":addr1, "addr":addr2, "focus":addr2};
+	const pr= pref[4].split("_");
+	zp= Bas.nd(pr[0]+zip);
+	a1= Bas.nd(pr[0]+addr1);
+	a2= Bas.nd(pr[0]+addr2);
+	pm[2]= {"zip":zp, "zip1":"", "pref":pref[4], "city":"", "area":a1, "addr":a2, "focus":a2};
   }
 	return pm;
 }
