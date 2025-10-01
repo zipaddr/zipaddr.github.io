@@ -1,10 +1,13 @@
 function zipaddr_ownpm(){     //WPForms用
-	const ver="1.6";
+	const ver="1.7";
 	let ans= new Array();
 	ans[0]= zipaddr_ownpm_tag("label","郵便番号");
 	ans[1]= zipaddr_ownpm_tag("label","都道府県");
 	ans[2]= zipaddr_ownpm_tag("label","市区町村");
 	ans[3]= zipaddr_ownpm_tag("label","住所");
+if( ans[3]=="" ){
+	ans[3]= zipaddr_ownpm_tag("label","ご住所");
+}
 //Set
 	if( typeof ZP.tel != "undefined" ) ZP.tel[1]= zipaddr_ownpm_tag("label","電話番号");
 	if( typeof ZP.sei != "undefined" ) ZP.sei[1]= zipaddr_ownpm_tag("label","姓");
