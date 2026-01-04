@@ -1,13 +1,13 @@
 function Zip(){
 /*
-■郵便番号から住所情報の自動入力処理(zipaddrx.js Ver7.275)
+■郵便番号から住所情報の自動入力処理(zipaddrs.js Ver7.275)
 
 The use is free of charge.// ご利用は無料です。
 @demo   https://zipaddr.com/
 @author https://pierre-soft.com/
 
 [htmlの定義]
-  <script src="https://zipaddr.github.io/zipaddrx.js" charset="UTF-8"></script>
+  <script src="https://zipaddr.github.io/zipaddrs.js" charset="UTF-8"></script>
 */
 //	共通
 this.xvr= "7.275";
