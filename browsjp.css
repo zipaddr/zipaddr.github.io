@@ -1,0 +1,23 @@
+#brows_auto{        /* •â•‰æ–Ê‘S‘Ì */
+	width: 170px;
+	height: 50px; !important;
+	color: #ffffcc;
+	background-color: #009999;
+	line-height: 1.5;  !important;
+}
+#brows-path{        /* password•”•ª */
+	width: 50px;  !important;
+}
+
+#brows_auto a{      /* anchor•”•ª */
+	display: inline-block;
+	width: 50px;
+	color: #00bbff;
+}
+.browsjp{
+	color: #FFF;
+	background: #009999;
+	border: 1px solid #009999;
+	padding: 2px 5px;
+	border-radius: 5px;
+}
