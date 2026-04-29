@@ -1,15 +1,15 @@
-#brows_auto{        /* •â•‰æ–Ê‘S‘Ì */
+#brows_auto{        /* è£œåŠ©ç”»é¢å…¨ä½“ */
 	width: 170px;
 	height: 50px; !important;
 	color: #ffffcc;
 	background-color: #009999;
 	line-height: 1.5;  !important;
 }
-#brows-path{        /* password•”•ª */
+#brows-path{        /* passwordéƒ¨åˆ† */
 	width: 50px;  !important;
 }
 
-#brows_auto a{      /* anchor•”•ª */
+#brows_auto a{      /* anchoréƒ¨åˆ† */
 	display: inline-block;
 	width: 50px;
 	color: #00bbff;
