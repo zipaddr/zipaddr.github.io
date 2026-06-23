@@ -1,0 +1,2 @@
+//this.ver="1.4";
+jQuery(document).ready(function($){$(document).on('change','input#checkbox-control-0',function(){if($(this).is(':checked')){;}else{const t="billing-postcode";if(document.getElementById(t)){obj=document.getElementById(t);Bas.st(obj);let x=htm5="";try{x=obj.placeholder;htm5=true}catch(e){x="1";htm5=false}if(htm5)Bas.sp(obj);Bas.av(obj,"keyup",Zip.rx)}}})});
