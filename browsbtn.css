@@ -1,6 +1,6 @@
 .browsjp{           /* ver2 */
 	color: #FFF;
-	background: #009999;
+	background: #009999 !important;
 	border: 1px solid #009999;
 	padding: 2px 5px;
 	border-radius: 5px;
